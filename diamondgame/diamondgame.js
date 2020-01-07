@@ -1,4 +1,13 @@
-'use strict'
+/* This is a game made by Jari Rauhala in autum 2019
+ * as part of a school project. This is my first
+ * JavaScript game.
+ * The lamb is moved by arrow keys right or left.
+ * The objective is to avoid stones and collect
+ * flowers falling from the sky.
+ * when hit with a flower, a default question is
+ * displayed. Point count is incremented with 
+ * correct answer.
+ */
 
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
