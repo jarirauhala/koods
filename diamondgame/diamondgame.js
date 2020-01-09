@@ -31,7 +31,6 @@ var stoneSize = 50;
 var score = 0;
 var dialogOpenFlag = 0;
 var correctAnswer = 'A';
-var question;
 
 document.addEventListener("keydown",keyPress);
 
@@ -76,21 +75,22 @@ $(document).ready(function () {
             dialogOpenFlag = 0;
         },
         buttons: {
-            'True' : function(event) {
-                if(isAnswerCorrect()){
-                    score += 1
+            'A' : function(event) {
+                if(isAnswerCorrect('A')){
+                    score += 20
                 }
 
                 $("#dialog1").dialog('close');
                 dialogOpenFlag = 0;
             },
 
-            'False' : function(event) {
-                if(isAnswerCorrect()){
-                    score += 20;
+            'B' : function(event) {
+                if(isAnswerCorrect('B')){
+                    score += 1;
                 }
                 $("#dialog1").dialog('close');
-                dialogOpenFlag = 0;            }
+                dialogOpenFlag = 0;
+            }
         }
     });
 });
@@ -109,8 +109,8 @@ async function displayQuestion(){
     correctAnswer = "A";
 
     $('#question').html(question);
-    $('#answer1').html('True: ' + answ1);
-    $('#answer2').html('False: ' + answ2);
+    $('#answer1').html('A: ' + answ1);
+    $('#answer2').html('B: ' + answ2);
 
     while(dialogOpenFlag === 1){
         console.log("Loopin");
@@ -178,6 +178,7 @@ function draw(){
            fallingObjects[i].y <= sheepY + sheepSize) {
 
             if(fallingObjects[i].objType === "stone"){
+                alert("Game over!"+"\n"+"Your score: " + score);
                 location.stop();
             }
             else{
@@ -189,9 +190,9 @@ function draw(){
             }
            }
 
-        // if(fallingObjects[i].y == cvs.height){
-        //     score++;
-        // }
+         if(fallingObjects[i].y == cvs.height){
+             score++;
+         }
 
 
     }
