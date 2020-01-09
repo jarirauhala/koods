@@ -1,19 +1,22 @@
 /* This is a game made by Jari Rauhala in autum 2019
  * as part of a school project. This is my first
- * JavaScript game.
+ * JavaScript game. In the final version the questions
+ * are fetched from a database and score is sent to
+ * be evaluated.
+ *
  * The lamb is moved by arrow keys right or left.
  * The objective is to avoid stones and collect
  * flowers falling from the sky.
  * when hit with a flower, a default question is
  * displayed. Point count is incremented with 
- * correct answer.
+ * correct answer by 20 and by 1 when avoiding a stone.
+ *
  */
 
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
 // load images
-
 var sheep = new Image();
 var bg = new Image();
 var dandelion = new Image();
@@ -122,8 +125,10 @@ async function displayQuestion(){
     document.addEventListener("keydown",keyPress);
 };
 
+// container for stones and flowers
 var fallingObjects = [];
 
+// first object is always the same
 fallingObjects[0] = {
     x : 0,
     y : 0,
@@ -149,6 +154,7 @@ function draw(){
 
         fallingObjects[i].y++;
 
+        // time to spawn a new object
         if( fallingObjects[i].y == 100 ){
             var rand = Math.random();
             console.log(rand);
@@ -176,7 +182,6 @@ function draw(){
            fallingObjects[i].x <= sheepX + sheepSize &&
            fallingObjects[i].y >= sheepY - stoneSize &&
            fallingObjects[i].y <= sheepY + sheepSize) {
-
             if(fallingObjects[i].objType === "stone"){
                 alert("Game over!"+"\n"+"Your score: " + score);
                 location.stop();
@@ -188,13 +193,12 @@ function draw(){
                     displayQuestion();
                 }
             }
-           }
+        }
 
-         if(fallingObjects[i].y == cvs.height){
-             score++;
-         }
-
-
+        // object has fallen off screen
+        if(fallingObjects[i].y == cvs.height){
+            score++;
+        }
     }
 
     ctx.drawImage(sheep,sheepX,sheepY,sheepSize,sheepSize);
