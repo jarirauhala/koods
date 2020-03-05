@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.db191fe7.chunk.css",
+    "main.js": "/static/js/main.c5e32d37.chunk.js",
+    "main.js.map": "/static/js/main.c5e32d37.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c714e047.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c714e047.js.map",
+    "static/js/2.bf85eacd.chunk.js": "/static/js/2.bf85eacd.chunk.js",
+    "static/js/2.bf85eacd.chunk.js.map": "/static/js/2.bf85eacd.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.338a5b9575f17a682deb7d1cfb53edc5.js": "/precache-manifest.338a5b9575f17a682deb7d1cfb53edc5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.db191fe7.chunk.css.map": "/static/css/main.db191fe7.chunk.css.map",
+    "static/js/2.bf85eacd.chunk.js.LICENSE.txt": "/static/js/2.bf85eacd.chunk.js.LICENSE.txt",
+    "static/media/kimonoJari.png": "/static/media/kimonoJari.d44cad0a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c714e047.js",
+    "static/js/2.bf85eacd.chunk.js",
+    "static/css/main.db191fe7.chunk.css",
+    "static/js/main.c5e32d37.chunk.js"
+  ]
+}
