@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainPage.qml</file>
+        <file>haeAikojenMukaan/QuestionWindow.qml</file>
+        <file>haeAikojenMukaan/ResultWindow.qml</file>
+        <file>ErrorWindow.qml</file>
+        <file>eriMatkojenVertailu/QuestionWindow.qml</file>
+        <file>eriMatkojenVertailu/ResultWindow.qml</file>
+        <file>parhaatJoukkueet/QuestionWindow.qml</file>
+        <file>parhaatJoukkueet/ResultWindow.qml</file>
+        <file>samanMatkanVertailu/QuestionWindow.qml</file>
+        <file>samanMatkanVertailu/ResultWindow.qml</file>
+        <file>tuloksetAakkosittain/QuestionWindow.qml</file>
+        <file>tuloksetAakkosittain/ResultWindow.qml</file>
+        <file>vuosittaisetTilastot/QuestionWindow.qml</file>
+        <file>vuosittaisetTilastot/ResultWindow.qml</file>
+        <file>tableViews/TableViewAll.qml</file>
+        <file>tableViews/TableViewBest.qml</file>
+        <file>tableViews/TableViewComp1.qml</file>
+        <file>tableViews/TableViewComp2.qml</file>
+        <file>tableViews/TableViewYearly.qml</file>
+        <file>components/TravelInquiries.qml</file>
+        <file>tableViews/TableViewSplit.qml</file>
+        <file>components/BackButton.qml</file>
+        <file>components/SearchButton.qml</file>
+        <file>components/OperationButton1.qml</file>
+        <file>urheilijanKehitys/QuestionWindow.qml</file>
+        <file>urheilijanKehitys/ResultWindow.qml</file>
+        <file>graphViews/GraphViewDevelopment.qml</file>
+        <file>jakaumaMaittain/QuestionWindow.qml</file>
+        <file>jakaumaMaittain/ResultWindow.qml</file>
+        <file>components/OperationButton2.qml</file>
+        <file>keskinopeusSijoituksenMukaan/QuestionWindow.qml</file>
+        <file>parhanSijoitus/QuestionWindow.qml</file>
+        <file>parhanSijoitus/ResultWindow.qml</file>
+        <file>keskinopeusSijoituksenMukaan/ResultWindow.qml</file>
+        <file>graphViews/GraphViewDistribution.qml</file>
+        <file>graphViews/GraphViewAvgTime.qml</file>
+        <file>graphViews/GraphViewRankBest.qml</file>
+    </qresource>
+</RCC>
