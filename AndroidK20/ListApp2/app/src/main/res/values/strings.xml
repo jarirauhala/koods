@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ListApp2</string>
+
+    <string-array name="items">
+        <item>peach</item>
+        <item>tomato</item>
+        <item>skuash</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>0.99</item>
+        <item>9.55</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Freesii peechii</item>
+        <item>tamaontomati</item>
+        <item>ei tennis</item>
+    </string-array>
+</resources>
