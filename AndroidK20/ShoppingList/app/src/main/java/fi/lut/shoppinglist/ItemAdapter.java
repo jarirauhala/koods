@@ -47,4 +47,8 @@ public class ItemAdapter extends BaseAdapter {
 
         return v;
     }
+
+    public void addNewItem(String item) {
+        mTestList.add(item);
+    }
 }
