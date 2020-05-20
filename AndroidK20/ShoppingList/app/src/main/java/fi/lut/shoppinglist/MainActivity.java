@@ -2,8 +2,10 @@ package fi.lut.shoppinglist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -32,10 +34,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ListItem newItem = new ListItem("nTomatoo");
                 db.addNewListItem(newItem);
-                db.addNewItem("newitemoooooo");
-
                 itemsListView.setAdapter(itemAdapter);
 
+            }
+        });
+
+        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showProductDetailsActivity =
+                        new Intent (getApplicationContext(), ProductDetails.class);
+                String productName = db.getItem(position).productName;
+                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
+                showProductDetailsActivity.putExtra("fi.lut.OTHER_INFO", "INforillo");
+
+                startActivity(showProductDetailsActivity);
             }
         });
 

@@ -23,6 +23,11 @@ public class DataBase {
     }
 
     public void addNewListItem(ListItem newItem) {
+        //TODO: check if item exists
         listItems.add(newItem);
+    }
+
+    public ListItem getItem(int position) {
+        return listItems.get(position);
     }
 }
