@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    // to hold some data for displaying in ListView
-    ArrayList<String> testList = new ArrayList<String>();
 
     ListView itemsListView;
     Button addButton;
@@ -26,20 +24,14 @@ public class MainActivity extends AppCompatActivity {
         itemsListView = (ListView) findViewById(R.id.itemsListView);
         addButton = (Button) findViewById(R.id.addButton);
 
-        testList.add("Eka");
-        testList.add("Toka");
-        testList.add("Vika");
-
         db = new DataBase();
         final ItemAdapter itemAdapter = new ItemAdapter(this, db);
-
-        //itemsListView.setAdapter(itemAdapter);
-
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testList.add("YEEEEEEEEEEEET9");
+                ListItem newItem = new ListItem("nTomatoo");
+                db.addNewListItem(newItem);
                 db.addNewItem("newitemoooooo");
 
                 itemsListView.setAdapter(itemAdapter);

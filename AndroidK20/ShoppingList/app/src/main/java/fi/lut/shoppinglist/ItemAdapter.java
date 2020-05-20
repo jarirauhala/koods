@@ -13,24 +13,25 @@ import java.util.ArrayList;
 public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
-    ArrayList<String> mTestList;
+    //ArrayList<String> mTestList;
     //DataBase mDb;
+    ArrayList<ListItem> mListItems;
 
 
     public ItemAdapter(Context c, DataBase db) {
-
-        mTestList = db.getData();
+        mListItems = db.getData();
+        //mTestList = db.getData();
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return mTestList.size();
+        return mListItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mTestList.get(position);
+        return mListItems.get(position);
     }
 
     @Override
@@ -44,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
         View v  = mInflater.inflate(R.layout.layout_description, null);
         TextView testTextView = (TextView) v.findViewById(R.id.testTextView);
 
-        String name = mTestList.get(position);
+        String name = mListItems.get(position).productName;
 
         testTextView.setText(name);
 
@@ -52,6 +53,6 @@ public class ItemAdapter extends BaseAdapter {
     }
 
     public void addNewItem(String item) {
-        mTestList.add(item);
+        //mTestList.add(item);
     }
 }
