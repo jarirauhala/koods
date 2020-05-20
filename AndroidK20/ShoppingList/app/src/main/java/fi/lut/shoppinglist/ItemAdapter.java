@@ -1,6 +1,7 @@
 package fi.lut.shoppinglist;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,12 @@ public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
     ArrayList<String> mTestList;
+    //DataBase mDb;
 
 
-    public ItemAdapter(Context c, ArrayList<String> testList) {
-        mTestList = testList;
+    public ItemAdapter(Context c, DataBase db) {
+
+        mTestList = db.getData();
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 

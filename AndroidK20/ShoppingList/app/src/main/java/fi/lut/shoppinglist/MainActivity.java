@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView itemsListView;
     Button addButton;
+    DataBase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +30,18 @@ public class MainActivity extends AppCompatActivity {
         testList.add("Toka");
         testList.add("Vika");
 
-        final ItemAdapter itemAdapter = new ItemAdapter(this, testList);
+        db = new DataBase();
+        final ItemAdapter itemAdapter = new ItemAdapter(this, db);
 
-        itemsListView.setAdapter(itemAdapter);
+        //itemsListView.setAdapter(itemAdapter);
 
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 testList.add("YEEEEEEEEEEEET9");
+                db.addNewItem("newitemoooooo");
+
                 itemsListView.setAdapter(itemAdapter);
 
             }
