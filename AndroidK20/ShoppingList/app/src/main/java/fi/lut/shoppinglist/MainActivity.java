@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 db.addNewListItem(newItem);
                 itemsListView.setAdapter(itemAdapter);
 
+                Intent addNewItem = new Intent(getApplicationContext(), AddItemActiity.class);
+                startActivity(addNewItem);
+
             }
         });
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         new Intent (getApplicationContext(), ProductDetails.class);
                 String productName = db.getItem(position).productName;
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
+                // todo: other product info from db
                 showProductDetailsActivity.putExtra("fi.lut.OTHER_INFO", "INforillo");
 
                 startActivity(showProductDetailsActivity);
