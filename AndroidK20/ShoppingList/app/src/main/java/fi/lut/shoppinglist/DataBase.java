@@ -31,4 +31,21 @@ public class DataBase {
     public void removeItem(int index) {
         listItems.remove(index);
     }
+
+    public double totalCost() {
+        double totalCost = 0;
+        double price;
+        for (ListItem item : listItems) {
+            try {
+                price = Double.valueOf(item.mPrice);
+            }
+            catch (Exception e) {
+                price = 0;
+            }
+
+            totalCost += price;
+        }
+
+        return totalCost;
+    }
 }

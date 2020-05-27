@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
             ListItem newItem = new ListItem(newAmount, newName, newBrand, newPrice, bitmap);
             db.addNewListItem(newItem);
+            updateTotalCost();
+
             itemsListView.setAdapter(itemAdapter);
         }
         else if(resultCode == 3) { // from ProductDetails, to remove the item
@@ -103,10 +106,19 @@ public class MainActivity extends AppCompatActivity {
             if (removeItemFlag) {
                 db.removeItem(db_position);
                 itemsListView.setAdapter(itemAdapter);
+                updateTotalCost();
             }
         }
         else {
             // error
         }
+    }
+
+    private void updateTotalCost() {
+        double cost;
+        cost = db.totalCost();
+        String costStr = cost + "";
+        TextView costView = (TextView) findViewById(R.id.costTextView);
+        costView.setText(costStr);
     }
 }
