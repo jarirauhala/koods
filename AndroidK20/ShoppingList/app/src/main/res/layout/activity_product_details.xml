@@ -14,14 +14,36 @@
         android:layout_marginLeft="64dp"
         android:layout_marginTop="80dp"
         android:text="TextView"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/infoTextView"
+        android:id="@+id/brandTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="144dp" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/productNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/productNameTextView" />
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/brandTextView"
+        app:layout_constraintTop_toBottomOf="@+id/brandTextView" />
+
+    <ImageView
+        android:id="@+id/detailImageView"
+        android:layout_width="304dp"
+        android:layout_height="284dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintStart_toStartOf="@+id/priceTextView"
+        app:layout_constraintTop_toBottomOf="@+id/priceTextView"
+        app:srcCompat="@drawable/ic_image_black_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

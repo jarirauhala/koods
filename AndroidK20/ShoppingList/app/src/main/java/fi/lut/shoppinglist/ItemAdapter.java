@@ -45,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
         View v  = mInflater.inflate(R.layout.layout_description, null);
         TextView testTextView = (TextView) v.findViewById(R.id.testTextView);
 
-        String name = mListItems.get(position).productName;
+        String name = mListItems.get(position).mProductName;
 
         testTextView.setText(name);
 

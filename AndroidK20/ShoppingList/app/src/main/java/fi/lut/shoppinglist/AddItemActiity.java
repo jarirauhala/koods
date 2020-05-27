@@ -5,21 +5,47 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.URI;
+
+import static android.app.Activity.RESULT_OK;
 
 public class AddItemActiity extends AppCompatActivity {
 
     Button addImageButton;
     ImageView prevImgView;
+    Button addNewItemButton;
+
+    EditText nameTextEdit;
+    EditText brandTextEdit;
+    EditText priceTextEdit;
+
+    String mName;
+    String mBrand;
+    String mPrice;
+    Uri mPicURI;
+    Bitmap mPic;
 
     private static final int IMAGE_PICK_CODE = 1000;
     private static final int PERMISSION_CODE = 1001;
@@ -32,6 +58,18 @@ public class AddItemActiity extends AppCompatActivity {
 
         addImageButton = (Button) findViewById(R.id.addImageButton);
         prevImgView = (ImageView) findViewById(R.id.previewImageView);
+        addNewItemButton = (Button) findViewById(R.id.addNewItemButton);
+
+        nameTextEdit = (EditText) findViewById(R.id.productNameEditText);
+        brandTextEdit = (EditText) findViewById(R.id.brandEditText);
+        priceTextEdit = (EditText) findViewById(R.id.priceEditText);
+
+        mName = getIntent().getStringExtra("fi.lut.PRODUCT_NAME");
+        mBrand = getIntent().getStringExtra("fi.lut.PRODUCT_BRAND");
+        mPrice = getIntent().getStringExtra("fi.lut.PRODUCT_PRICE");
+
+        // init mPic with default picture
+        mPic = BitmapFactory.decodeResource(getResources(), R.drawable.cart);
 
         addImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,25 +88,49 @@ public class AddItemActiity extends AppCompatActivity {
                 else {
                     pickImageFromGallery();
                 }
-
             }
         });
-/*
-        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        addNewItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent showProductDetailsActivity =
-                        new Intent (getApplicationContext(), ProductDetails.class);
-                String productName = db.getItem(position).productName;
-                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
-                // todo: other product info from db
-                showProductDetailsActivity.putExtra("fi.lut.OTHER_INFO", "INforillo");
+            public void onClick(View v) {
 
-                startActivity(showProductDetailsActivity);
+                mName = nameTextEdit.getText().toString();
+                mBrand = brandTextEdit.getText().toString();
+                mPrice = priceTextEdit.getText().toString();
+
+                System.out.println("oj210");
+
+
+                Intent result = new Intent();
+                result.putExtra("fi.lut.NAME_INPUT", mName);
+                result.putExtra("fi.lut.BRAND_INPUT", mBrand);
+                result.putExtra("fi.lut.PRICE_INPUT", mPrice);
+
+                /*
+                ByteArrayOutputStream btArrayOutputStream = new ByteArrayOutputStream();
+                mPic.compress(Bitmap.CompressFormat.PNG, 50, btArrayOutputStream );
+                result.putExtra("fi.lut.PIC_INPUT", btArrayOutputStream.toByteArray());
+
+                 */
+
+                ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                mPic.compress(Bitmap.CompressFormat.JPEG, 50, bs);
+                result.putExtra("fi.lut.PIC_INPUT", bs.toByteArray());
+
+                System.out.println("OJ200");
+
+                setResult(RESULT_OK, result);
+                System.out.println("OJ240");
+
+                finish();
+                System.out.println("OJ20044");
+
             }
         });
-        */
+
     }
+
 
     private void pickImageFromGallery() {
         Intent pickImage = new Intent(Intent.ACTION_PICK);
@@ -97,7 +159,17 @@ public class AddItemActiity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
-            prevImgView.setImageURI(data.getData());
+            mPicURI = data.getData();
+            //prevImgView.setImageURI(mPicURI);
+            try {
+                mPic = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mPicURI);
+                prevImgView.setImageBitmap(mPic);
+            } catch (IOException e) {
+                Intent error = new Intent (getApplicationContext(), ProductDetails.class);
+                error.putExtra("fi.lut.PRODUCT_NAME", "error in converting to bitmap");
+                startActivity(error);
+            }
+
         }
     }
 }
