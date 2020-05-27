@@ -1,7 +1,6 @@
 package fi.lut.shoppinglist;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,11 +42,14 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View v  = mInflater.inflate(R.layout.layout_description, null);
-        TextView testTextView = (TextView) v.findViewById(R.id.testTextView);
+        TextView nameTextView = (TextView) v.findViewById(R.id.listNameTextView);
+        TextView amountTextView = (TextView) v.findViewById(R.id.listAmountTextView);
 
         String name = mListItems.get(position).mProductName;
+        String amount = mListItems.get(position).mAmount;
 
-        testTextView.setText(name);
+        nameTextView.setText(name);
+        amountTextView.setText(amount);
 
         return v;
     }
