@@ -37,10 +37,12 @@ public class AddItemActiity extends AppCompatActivity {
     ImageView prevImgView;
     Button addNewItemButton;
 
+    EditText amountTextEdit;
     EditText nameTextEdit;
     EditText brandTextEdit;
     EditText priceTextEdit;
 
+    String mAmount;
     String mName;
     String mBrand;
     String mPrice;
@@ -60,10 +62,12 @@ public class AddItemActiity extends AppCompatActivity {
         prevImgView = (ImageView) findViewById(R.id.previewImageView);
         addNewItemButton = (Button) findViewById(R.id.addNewItemButton);
 
+        amountTextEdit = (EditText) findViewById(R.id.amountEditText);
         nameTextEdit = (EditText) findViewById(R.id.productNameEditText);
         brandTextEdit = (EditText) findViewById(R.id.brandEditText);
         priceTextEdit = (EditText) findViewById(R.id.priceEditText);
 
+        mAmount = getIntent().getStringExtra("fi.lut.PRODUCT_AMOUNT");
         mName = getIntent().getStringExtra("fi.lut.PRODUCT_NAME");
         mBrand = getIntent().getStringExtra("fi.lut.PRODUCT_BRAND");
         mPrice = getIntent().getStringExtra("fi.lut.PRODUCT_PRICE");
@@ -95,40 +99,26 @@ public class AddItemActiity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                mAmount = amountTextEdit.getText().toString();
                 mName = nameTextEdit.getText().toString();
                 mBrand = brandTextEdit.getText().toString();
                 mPrice = priceTextEdit.getText().toString();
 
-                System.out.println("oj210");
-
-
                 Intent result = new Intent();
+                result.putExtra("fi.lut.AMOUNT_INPUT", mAmount);
                 result.putExtra("fi.lut.NAME_INPUT", mName);
                 result.putExtra("fi.lut.BRAND_INPUT", mBrand);
                 result.putExtra("fi.lut.PRICE_INPUT", mPrice);
 
-                /*
-                ByteArrayOutputStream btArrayOutputStream = new ByteArrayOutputStream();
-                mPic.compress(Bitmap.CompressFormat.PNG, 50, btArrayOutputStream );
-                result.putExtra("fi.lut.PIC_INPUT", btArrayOutputStream.toByteArray());
-
-                 */
-
+                // compress image
                 ByteArrayOutputStream bs = new ByteArrayOutputStream();
                 mPic.compress(Bitmap.CompressFormat.JPEG, 50, bs);
                 result.putExtra("fi.lut.PIC_INPUT", bs.toByteArray());
 
-                System.out.println("OJ200");
-
                 setResult(RESULT_OK, result);
-                System.out.println("OJ240");
-
                 finish();
-                System.out.println("OJ20044");
-
             }
         });
-
     }
 
 

@@ -44,46 +44,31 @@ public class MainActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent addNewItem = new Intent(getApplicationContext(), AddItemActiity.class);
                 addNewItem.putExtra("fi.lut.NEW_PRODUCT_NAME", mNewProductName);
                 startActivityForResult(addNewItem, 0);
-                //startActivity(addNewItem);
             }
         });
 
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println("OJ83");
-
                 Intent showProductDetailsActivity =
                         new Intent (getApplicationContext(), ProductDetails.class);
+                String productAmount = db.getItem(position).mAmount + "";
                 String productName = db.getItem(position).mProductName;
                 String productBrand = db.getItem(position).mBrand;
                 String productPrice = db.getItem(position).mPrice + "";
                 Bitmap productPicture = db.getItem(position).mPic;
-                //Uri picUri = db.getItem(position).mPictureURI;
-                System.out.println("OJ82");
 
+                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_AMOUNT", productAmount);
+                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
+                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_BRAND", productBrand);
+                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PRICE", productPrice);
 
                 ByteArrayOutputStream btArrayOutputStream = new ByteArrayOutputStream();
                 productPicture.compress(Bitmap.CompressFormat.JPEG, 50, btArrayOutputStream );
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PICTURE", btArrayOutputStream.toByteArray());
-
-                System.out.println("OJ80");
-
-
-                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
-                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_BRAND", productBrand);
-                showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PRICE", productPrice);
-                //showProductDetailsActivity.setData(picUri);
-                //showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PICTURE", productPicture);
-                // todo: picture
-                //showProductDetailsActivity.putExtra("fi.lut.OTHER_INFO", "INforillo");
-
-                System.out.println("OJ81");
-
 
                 startActivity(showProductDetailsActivity);
             }
@@ -92,45 +77,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        System.out.println("oj300a");
-
         super.onActivityResult(requestCode, resultCode, data);
 
-        System.out.println("oj3066");
-
-
         if (resultCode == Activity.RESULT_OK) {
-            System.out.println("oj300");
-
+            String newAmount = data.getStringExtra("fi.lut.AMOUNT_INPUT");
             String newName = data.getStringExtra("fi.lut.NAME_INPUT");
             String newBrand = data.getStringExtra("fi.lut.BRAND_INPUT");
             String newPrice = data.getStringExtra("fi.lut.PRICE_INPUT");
-            //Uri picURI = data.getData();
+
             Bitmap bitmap = BitmapFactory.decodeByteArray(
-                    data.getByteArrayExtra("fi.lut.PIC_INPUT"),0,data.getByteArrayExtra("fi.lut.PIC_INPUT").length);
+                    data.getByteArrayExtra("fi.lut.PIC_INPUT"),
+                    0,
+                    data.getByteArrayExtra("fi.lut.PIC_INPUT").length);
 
-            /*
-            if(data.hasExtra("fi.lut.PIC_INPUT")) {
-                bitmap = BitmapFactory.decodeByteArray(
-                        data.getByteArrayExtra("fi.lut.PIC_INPUT"),0,data.getByteArrayExtra("fi.lut.PIC_INPUT").length);
-            }
-
-             */
-
-            System.out.println("oj304");
-
-
-
-            ListItem newItem = new ListItem(newName, newBrand, newPrice, bitmap);
+            ListItem newItem = new ListItem(newAmount, newName, newBrand, newPrice, bitmap);
             db.addNewListItem(newItem);
             itemsListView.setAdapter(itemAdapter);
         }
         else {
-            System.out.println("oj3004");
-
+            // error
         }
-
-
-
     }
 }
