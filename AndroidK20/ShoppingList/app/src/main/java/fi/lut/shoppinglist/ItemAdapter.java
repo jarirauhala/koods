@@ -12,14 +12,10 @@ import java.util.ArrayList;
 public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
-    //ArrayList<String> mTestList;
-    //DataBase mDb;
     ArrayList<ListItem> mListItems;
-
 
     public ItemAdapter(Context c, DataBase db) {
         mListItems = db.getData();
-        //mTestList = db.getData();
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -52,9 +48,5 @@ public class ItemAdapter extends BaseAdapter {
         amountTextView.setText(amount);
 
         return v;
-    }
-
-    public void addNewItem(String item) {
-        //mTestList.add(item);
     }
 }

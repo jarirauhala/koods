@@ -65,12 +65,13 @@ public class MainActivity extends AppCompatActivity {
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_NAME", productName);
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_BRAND", productBrand);
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PRICE", productPrice);
+                showProductDetailsActivity.putExtra("fi.lut.DB_POSITION", position);
 
                 ByteArrayOutputStream btArrayOutputStream = new ByteArrayOutputStream();
                 productPicture.compress(Bitmap.CompressFormat.JPEG, 50, btArrayOutputStream );
                 showProductDetailsActivity.putExtra("fi.lut.PRODUCT_PICTURE", btArrayOutputStream.toByteArray());
 
-                startActivity(showProductDetailsActivity);
+                startActivityForResult(showProductDetailsActivity, 5);
             }
         });
     }
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == Activity.RESULT_OK) { // from AddItemActiity
             String newAmount = data.getStringExtra("fi.lut.AMOUNT_INPUT");
             String newName = data.getStringExtra("fi.lut.NAME_INPUT");
             String newBrand = data.getStringExtra("fi.lut.BRAND_INPUT");
@@ -93,6 +94,16 @@ public class MainActivity extends AppCompatActivity {
             ListItem newItem = new ListItem(newAmount, newName, newBrand, newPrice, bitmap);
             db.addNewListItem(newItem);
             itemsListView.setAdapter(itemAdapter);
+        }
+        else if(resultCode == 3) { // from ProductDetails, to remove the item
+            assert data != null;
+            boolean removeItemFlag = data.getBooleanExtra("fi.lut.REMOVE_FLAG", false);
+            int db_position = data.getIntExtra("fi.lut.DB_POSITION", -1);
+
+            if (removeItemFlag) {
+                db.removeItem(db_position);
+                itemsListView.setAdapter(itemAdapter);
+            }
         }
         else {
             // error

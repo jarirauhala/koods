@@ -12,10 +12,8 @@ public class DataBase {
         testList.add("init1");
     }
 
-    //public ArrayList<String> getData() {
     public ArrayList<ListItem> getData() {
         return listItems;
-        //return testList;
     }
 
     public void addNewItem(String item) {
@@ -23,11 +21,14 @@ public class DataBase {
     }
 
     public void addNewListItem(ListItem newItem) {
-        //TODO: check if item exists
         listItems.add(newItem);
     }
 
     public ListItem getItem(int position) {
         return listItems.get(position);
+    }
+
+    public void removeItem(int index) {
+        listItems.remove(index);
     }
 }
