@@ -27,3 +27,5 @@ to an Android device and instlling it from an resource manager app.
 or by downloading "\koods\AndroidK20\ShoppingList\" and running it on an emulator
 on Android Studio.
 
+See how and why to use the app:
+https://youtu.be/PfjD-Ynf6NM
