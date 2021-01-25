@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      position: relative;
+      bottom: 0;
+      height: 10%;
+      text-align: center;
+    }
+
+    body {
+      text-align: justify;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Jari Rauhala</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="qml.html">C++</a></li>
+        <li><a href="android.html">Android</a></li>
+        <li><a href="python.html">Python</a></li>
+        <li><a href="react.html">React</a></li>
+        <li  class="active"><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Finlandia Project</h2><br>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What does the program do?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <p>The program implements queries to a database and organizes, compares, and graphically displays the results.</p>
+          <p>Originally, the database was retrieved from https://www.finlandiahiihto.fi/Tulokset/Tulosarkisto by Python Selenium script. 
+            This implementation was altered to a static sql file, because the script was not implemented by me.
+          </p>
+          <p>The database is a result archive of an annual cross-country skiing event calle Finlandia-Hiihto, hence the name of the project.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">What was it made for?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            The program is a course work for Tampere University's 
+            course TIE-20200 Ohjelmistojen suunnittelu (Software Design), 
+            which took place in winter/spring 2020.
+          </p>
+          <p>
+            The objective of the work was to implement a program, 
+            which fetches data from the given website 
+            and presents results from queries given by the user. 
+            The results the program should be able to provide 
+            were defined in the work instructions.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">My part in the project</a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Due to various reasons I ened up doing most of the presentable work. I have to admit that this was a bit annoying at the time, but actually now I'm happy that I'm able to present most of the code as mine:)</p>
+          <p>In more detail, my contribution to the project is</p>
+          <li>Basic architecture, class initialization</li>
+          <li>Controller module in its entirety</li>
+          <li>TableViews and their models</li>
+          <li>About 90% of the GraphViews </li>
+          <li>Datahandler class apart from the SQL queries</li>
+          <li>Prototyping</li><br>
+          <p>So, done by my group members</p>
+          <li>SQL queries</li>
+          <li>First lines of GraphViews</li>
+          <li>GraphModel::timeToHour function</li>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Boring UI Video Tour</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <p>Yeah, this video is a bit boring, there's not even an audio track.</p>
+              <p>But this video demonstrates the main functionalities of the UI. 
+                So, you don't even need to download and run the code to see just how awsome it is.</p>
+              <p>For a more entertaining video, check the <a href="/android.html">Android</a> section.</p>
+            </div>
+            <div class="col-sm-8">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KntcgRfF5Rg" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Structure</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <p>The program has been implemented with <b>MVC</b> (Model-View-Controller) model.</p>
+              <p>
+                <b>Views</b> have been implemented with QML. 
+                MainPage presents different types of queries possible. 
+                By pressing a button a QuestionWindow is presented, which collects search parameters from the user.
+                If the query has been succesfull, the results are presented in ResultWindow.
+                If not, an ErrorWindow is displayed.
+              </p>
+              <p>
+                ClickHandler class in <b>Controller</b> recieves the search parameters from the View.
+                It further sends them to InputValidator, which checks their validity.
+                If valid, ClickHandler asks the Model to make the query and to send data to View.
+                If not, ClickHandler returns an error statement to the View.
+              </p>
+              <p>
+                <b>Model</b> recieves the query parameters from Controller and they are passed forward to DataHandler.
+                It formulates an SQL query using QT's QSqlDatabase class.
+                Queries are made to local datablase.db file.
+              </p>
+            </div>
+            <div class="col-sm-8">
+              <img src="../images/luokkakaavioYksink.png" style="width: 100%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Code</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            The code is mostly written in C++, using many Qt classes. All the code can be found at
+            <a href="https://github.com/jarirauhala/koods/tree/master/FinlandiaProjekti">Github.</a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+</div>
+
+<footer class="footer">
+  <p>2020 Jari Rauhala</p>
+</footer>
+
+</body>
+</html>

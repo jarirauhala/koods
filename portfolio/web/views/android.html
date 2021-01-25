@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jari Rauhala - portfolio - Android</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="home">Jari Rauhala</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Projects
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="qml">C++</a></li>
+              <li class="active"><a class="dropdown-item" href="android">Android</a></li>
+              <li><a class="dropdown-item" href="python">Python</a></li>
+              <li><a class="dropdown-item" href="react">React</a></li>
+            </ul>
+        </li>
+        <li><a href="cv">CV</a></li>
+        <li><a href="contact">Contact</a></li>                    
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Shopping List</h2>
+  <h3>An Android application</h3><br>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">What does the program do?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <p>
+            It is an Android app for creating shopping lists.
+            The user can create items of products s/he is willing to purchase. </p>
+          <p>
+            For every item, the user can insert details of amount, name, 
+            brand or price and upload an image from gallery.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3">What was it made for?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+            <p>
+                The app was made for LUT University's course: <br>
+                CT70A9120_15.04.2020 <br>
+                Software Development Skills: Mobile <br>
+                Anytime-course        
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">What does the code do?</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>A ListItem class instance is created by the parameters given by the user and saved to class DataBase.
+            Adding new items happens in AddItemActiity activity.</p>
+          <p>The main activity shows a ListView of all products added.
+            ListView is described by layout_description.xml and the data
+            it shows is populated by class ItemAdapter.</p>  
+          <p>The amount and the name are displayed of the product.
+            By clicking a list item ProductDetails activity is opened
+            and all the details of the clicked ListItem are displayed.</p>
+          <p>The user can remove the item by clicking "Remove from shopping list"
+            button. It is then removed from the DataBase.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Exciting video tour!</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PfjD-Ynf6NM" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6">How to open the app on your own phone?</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>The app is not available in the app store, which is a shame, because I'm sure it would be a hit.</p>
+          <p>But luckily, you can download <i>app-debug.apk</i> it from <a href="https://github.com/jarirauhala/koods/tree/master/AndroidK20/ShoppingList"><b>Github</b></a> and open from your phone's resource management</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6">Code</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            All the code can be found at
+            <a href="https://github.com/jarirauhala/koods/tree/master/AndroidK20/ShoppingList"><b>Github.</b></a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+  </div> 
+</div>
+
+</body>
+</html>

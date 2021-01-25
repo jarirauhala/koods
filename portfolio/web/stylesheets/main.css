@@ -1,0 +1,153 @@
+.jumbotron {
+  background: #c06071;
+  color: #f8edef;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+.jumbotron .btn-primary {
+  background: #845ac7;
+  border-color: #845ac7;
+}
+.jumbotron .btn-primary:hover {
+  background: #7646c1;
+}
+.jumbotron p {
+  color: #f8edef;
+  max-width: 75%;
+  margin: 1em auto 2em;
+}
+.jumbotron h1 {
+  font-size: 40px;
+}
+.navbar + .jumbotron {
+  margin-top: -20px;
+}
+.jumbotron .lang-logo {
+  display: block;
+  background: #B01302;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border: 2px solid white;
+}
+.jumbotron .lang-logo img {
+  max-width: 100%;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background: #7b230b;
+  color: #f8edef;
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: transparent;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.lang_logo {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+#renderZone {
+  background: #44a;
+  height: 100%;
+}
+
+body {
+  background: #f8edef;
+  color: #7b230b;
+}
+
+
+a:link {
+  color: #7b230b;
+}
+
+a:visited {
+  color: #7b230b;
+}
+
+a:hover {
+  color: #B01302;
+}
+
+.panel-heading {
+  background-color: #7b230b !important;
+}
+
+.prog-info-title {
+  color: #f8edef !important;
+}
+
+.contactImg {
+  width: 30%;
+  text-align: center;
+}
+
+.dropdown-menu li.active a {
+  background-color: #c06071 !important;
+}
+
+.navbar li a:hover {
+  color: #e1b5bc !important;
+}
+
+.navbar li a {
+  color: #f8edef !important;
+}
+
+.dropdown-menu li a {
+  color: black !important;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #7b230b !important;
+  color: #f8edef !important;
+}
+
+.navbar-brand{
+  color: #f8edef !important;
+}
+
+.navbar-brand:hover{
+  color: #e1b5bc !important;
+}

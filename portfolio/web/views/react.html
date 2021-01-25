@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jari Rauhala - portfolio - React</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="home">Jari Rauhala</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Projects
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="qml">C++</a></li>
+              <li><a class="dropdown-item" href="android">Android</a></li>
+              <li><a class="dropdown-item" href="python">Python</a></li>
+              <li class="active"><a class="dropdown-item" href="react">React</a></li>
+            </ul>
+        </li>
+        <li><a href="cv">CV</a></li>
+        <li><a href="contact">Contact</a></li>                    
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Button Game</h2>
+  <h3>Simple React.js app with Node.js server</h3><br>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">What does the program do?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <p>The program is a simple game with nothing else than one button.</p>
+          <p>Pressing the button costs one point and by pressing there is a chance to win more points.</p>
+          <p>The Node server has a counter, which is incremented by every press of a button.
+              When the counter hits some preset value, points are awarded fow whoever pressed the button.</p>
+          <p>The interesting part besides the rotatig picture of me is that anyone can increment the server-side counter
+              and the player needs to time their presses accordingly.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3">What was it made for?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Button Game was made as a job application assignment in spring 2020.</p>
+          <p>It might be obvious that I wasn't picked for the role, 
+              as they were looking for someone with a bit more than 
+              a couple days experience with React.
+          </p>
+          <p>This game is not to show my wide range of technical skills, 
+              but rather to show my ability to pick up a completely new subject and learn how to use it within days.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Go play!</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            I hope you have your button pressing finger warmed up. You can find the game <b><a href="https://nappipeli4.herokuapp.com/">Here</a></b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Why is there a picture of me in a kimono?</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            This was the best picture of me available at the time. 
+            For whatever reason, the more serious I try to look in a photo, the more silly the result tends to be.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6">Code</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            The user interface is done with React and the server with Node. All the code can be found at
+            <a href="https://github.com/jarirauhala/koods/tree/master/nappipeli"><b>Github.</b></a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jari Rauhala - portfolio - Python</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Jari Rauhala</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Projects
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="qml">C++</a></li>
+              <li><a class="dropdown-item" href="android">Android</a></li>
+              <li class="active"><a class="dropdown-item" href="python">Python</a></li>
+              <li><a class="dropdown-item" href="react">React</a></li>
+            </ul>
+        </li>
+        <li><a href="cv">CV</a></li>
+        <li><a href="contact">Contact</a></li>                    
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <h2>Scrapy Web Crawler</h2>
+  <h3>Bot that crawls throught news looking for articles not about Covid-19</h3><br>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">What does the program do?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <p>The program is a typical web crawler; it loads data from web sites and saves all that is useful.
+            It starts from an initial list of web sites and collects all useful links from them. 
+            It then adds the links to the list of web sites to be visited later.</p>
+          <p>The crawler's crawling has been limited to news provided by the Finnish broadcasting company Yle,
+            because I asked for their permission, which they granted.</p>
+          <p>The crawler inspects the contents of the news it has downloaded and looks for keywords indicating mentions of the corona virus.
+            It then discards those with found mentions and saves the rest. The crawling was done in spring 2020.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3">What was it made for?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+            <p>
+              The crawler was done as a part of my Bachelor's Thesis.       
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">What does the code do?</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Main functionalities of the crawler are in class alspider.
+            The crawler calls for the parse function with a response from the web site. 
+            From the data useful information, such as header, author, and URLs, are parsed using xpath.</p>
+          <p>Parsed data is used to make Item objects, which are then passed to pipelines using yield function.
+            Pipelines check for keywords in the news text and saves the data locally.</p>
+          <p>With my Batchelor's Thesis work the crawler was run in cloud server Scrapinghub.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="prog-info-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6">Code</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>
+            All the code can be found at
+            <a href="https://github.com/jarirauhala/koods/tree/master/python/scrapy/mycrawler"><b>Github.</b></a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</body>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jari Rauhala - portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="jquery.js"></script> 
+  <script>
+    function changeButtonText() {
+      let btn = document.getElementById("collaps")
+      if (btn.innerHTML == "Click here to get to know my skills!") {
+        btn.innerHTML = "Hide game";
+      }
+      else {
+        btn.innerHTML = "Click here to get to know my skills!";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="home">Jari Rauhala</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Projects
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="qml">C++</a></li>
+              <li><a class="dropdown-item" href="android">Android</a></li>
+              <li><a class="dropdown-item" href="python">Python</a></li>
+              <li><a class="dropdown-item" href="react">React</a></li>
+            </ul>
+        </li>
+        <li><a href="cv">CV</a></li>
+        <li><a href="contact">Contact</a></li>                    
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron" >
+  <div id="container-fluid" style="text-align: center; background-color: #c06071;">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>Nice to meet you and welcome to my Portfolio!</h1>      
+        <p>My name is Jari Rauhala and I'm looking for a Software Developer position in Summer 2021</p>    
+      </div>
+      <div class="col-sm-3">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="../images/photo_2019-01-13_11-39-35.png" height="100%">
+            </div>
+            <div class="flip-card-back">
+              <img src="../images/kimonoJari.png" height="100%">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-1">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="container-fluid" style="text-align: center; background-color: #e7c0c7; margin-top: 0; padding: 1%;">
+  <button id="collaps" type="button" class="btn btn-info" onclick="changeButtonText()" data-toggle="collapse" data-target="#cvs" style="background-color: #7b230b; border-color: #f8edef;" >Click here to get to know my skills!</button>
+  <div id="cvs" class="collapse" > <br>
+    <div class="row">
+      <div class="col-sm-9">
+        <canvas id="canvas" width="800" height="400" style="width: 95%; border-style: solid; border-color: #f8edef;"></canvas><br><br>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+        <script src="/views/worm/diamondgame.js"></script>    
+      </div>
+      <div class="col-sm-3" style="text-align: left;">
+        <div class="table-responsive">
+          <h3 style="text-align: center;">Skills gathered</h3>
+          <table class="table" id="skill_list" style="max-height: 400; font-size: 200%; text-align: left;">
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div> <br>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>Here are some projects I have done</h3><br><br><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="flip-card">
+        <a class="content_light" href="qml">
+          <p class="lang-title">C++ / QML</p>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="lang_logo" src="../images/cplusplus.png">
+            </div>
+            <div class="flip-card-back">
+              <img class="lang_logo" src="../images/qml.png">
+            </div>
+          </div>
+        </a>  
+      </div>
+    </div>
+    <div class="col-sm-3"> 
+      <div class="flip-card">
+        <a href="android">
+          <p class="lang-title">Android / Java</p>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="lang_logo" src="../images/android.png" >
+            </div>
+            <div class="flip-card-back">
+              <img class="lang_logo" src="../images/java.png" >
+            </div>
+          </div>
+        </a>  
+      </div>
+    </div>
+    <div class="col-sm-3"> 
+      <div class="flip-card">
+        <a href="python">
+          <p class="lang-title">Python / Scrapy</p>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="lang_logo" src="../images/python.png" >
+            </div>
+            <div class="flip-card-back">
+              <img class="lang_logo" src="../images/scrapy.png" >
+            </div>
+          </div>
+        </a>  
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="flip-card">
+        <a href="react">
+          <p class="lang-title">React / Node</p>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img class="lang_logo" src="../images/react.png" >
+            </div>
+            <div class="flip-card-back">
+              <img class="lang_logo" src="../images/nodejs.png">
+            </div>
+          </div>
+        </a>  
+      </div>
+    </div>
+  </div>
+</div><br><br><br><br><br>
+
+</body>
+</html>
