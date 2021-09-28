@@ -87,12 +87,6 @@ $app->get('/cv', function() use($app) {
   return $app['twig']->render('cv.html');
 });
 
-$app->get('/cv', function() use($app) {
-  $app['monolog']->addDebug('apitest');
-  return $app['twig']->render('apitest.html');
-});
-
-
 $app->get('/secretpathforhighscore', function() use($app) {
 
   $st = $app['pdo']->prepare('SELECT MAX(score) as score FROM high_score');
